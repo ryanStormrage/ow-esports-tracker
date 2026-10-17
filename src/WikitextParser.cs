@@ -171,6 +171,7 @@ public static partial class WikitextParser
     private static string PrettyTeam(string key)
     {
         if (key.Any(char.IsUpper)) return key;        // already a display name
+        if (key.Length <= 4 && !key.Contains(' ')) return key.ToUpperInvariant();   // "ntmr" -> "NTMR"
         var words = key.Replace('_', ' ').Split(' ', StringSplitOptions.RemoveEmptyEntries)
             .Select(w => w.Length <= 2 && w is not ("of" or "to")
                 ? w.ToUpperInvariant()                          // "gk" -> "GK"
