@@ -97,10 +97,10 @@ public static class ReportBuilder
         var upcoming = string.Concat(r.Upcoming.Select(MatchRow));
         var empty = "<li class=\"muted\">Nothing here yet.</li>";
 
-        var html = $$"""
+        var html = $$$"""
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{{E(r.Tournament)}} · Esports Tracker</title>
+<title>{{{E(r.Tournament)}}} · Esports Tracker</title>
 <style>
 :root{--bg:#0f0d17;--panel:#1a1726;--line:#2e2a40;--text:#f1eefa;--muted:#9a94b0;--accent:#a78bfa;--win:#34d399;--loss:#f87171}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,Segoe UI,sans-serif}
@@ -123,16 +123,16 @@ li .score span{color:var(--muted);margin:0 2px}li .win{color:var(--win);font-wei
 @media(max-width:800px){.grid{grid-template-columns:1fr}}
 </style></head><body><div class="wrap">
 <div class="kicker">Overwatch esports tracker</div>
-<h1>{{E(r.Tournament.Replace('_', ' ').Replace("/", " · "))}}</h1>
-<div class="muted">{{r.MatchesParsed}} matches · updated {{r.GeneratedUtc:yyyy-MM-dd HH:mm}} UTC</div>
+<h1>{{{E(r.Tournament.Replace('_', ' ').Replace("/", " · "))}}}</h1>
+<div class="muted">{{{r.MatchesParsed}}} matches · updated {{{r.GeneratedUtc:yyyy-MM-dd HH:mm}}} UTC</div>
 <div class="grid">
   <section class="panel"><h2>Standings</h2>
     <table><thead><tr><th>#</th><th>Team</th><th>Series</th><th>Maps</th><th>Diff</th><th>Last 5</th></tr></thead>
-    <tbody>{{(standingsRows.Length > 0 ? standingsRows : "<tr><td colspan=6 class=muted>No completed matches yet.</td></tr>")}}</tbody></table>
+    <tbody>{{{(standingsRows.Length > 0 ? standingsRows : "<tr><td colspan=6 class=muted>No completed matches yet.</td></tr>")}}}</tbody></table>
   </section>
   <div class="stack">
-    <section class="panel"><h2>Upcoming</h2><ul>{{(upcoming.Length > 0 ? upcoming : empty)}}</ul></section>
-    <section class="panel"><h2>Recent results</h2><ul>{{(recent.Length > 0 ? recent : empty)}}</ul></section>
+    <section class="panel"><h2>Upcoming</h2><ul>{{{(upcoming.Length > 0 ? upcoming : empty)}}}</ul></section>
+    <section class="panel"><h2>Recent results</h2><ul>{{{(recent.Length > 0 ? recent : empty)}}}</ul></section>
   </div>
 </div>
 <footer>Match data from <a href="https://liquipedia.net/overwatch/">Liquipedia</a>, licensed under
