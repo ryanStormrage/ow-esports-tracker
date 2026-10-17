@@ -37,6 +37,8 @@ public static partial class WikitextParser
     {
         var text = Comments().Replace(wikitext, "");
         var matches = new List<Match>();
+        // Liquipedia often writes |bestof= only on the first match of a list; later matches inherit it.
+        var inheritedBestOf = 0;
 
         foreach (System.Text.RegularExpressions.Match m in MatchStart().Matches(text))
         {
@@ -67,7 +69,13 @@ public static partial class WikitextParser
             int? winner = null;
             var winnerParam = named.GetValueOrDefault("winner")?.Trim();
             var finished = named.GetValueOrDefault("finished")?.Trim().ToLowerInvariant() is "true" or "1" or "yes";
-            int.TryParse(named.GetValueOrDefault("bestof")?.Trim(), out var bestOf);
+            if (int.TryParse(named.GetValueOrDefault("bestof")?.Trim(), out var explicitBestOf) && explicitBestOf > 0)
+                inheritedBestOf = explicitBestOf;
+            var bestOf = inheritedBestOf;
+            var date = ParseDate(named.GetValueOrDefault("date"));
+            // A match more than 6 hours in the past with maps played is over, even if nobody set |finished=.
+            if (!finished && date is not null && date < DateTime.Now.AddHours(-6) && mapWins1 + mapWins2 > 0)
+                finished = true;
 
             if (winnerParam is "1" or "2" or "0")
                 winner = int.Parse(winnerParam);
@@ -80,7 +88,7 @@ public static partial class WikitextParser
             }
 
             var dateText = named.GetValueOrDefault("date");
-            matches.Add(new Match(page, team1, team2, score1, score2, winner, ParseDate(dateText), Clean(dateText)));
+            matches.Add(new Match(page, team1, team2, score1, score2, winner, date, Clean(dateText)));
         }
         return matches;
     }
