@@ -1,0 +1,31 @@
+name: Build and update standings
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "41 3 * * *"    # daily, 03:41 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - name: Build
+        run: dotnet build -c Release
+      - name: Fetch matches and build page
+        run: dotnet run -c Release --no-build
+      - name: Commit results
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs
+          git diff --cached --quiet || git commit -m "Update standings $(date -u +%F)"
+          git push
