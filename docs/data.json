@@ -1,6 +1,6 @@
 {
   "tournament": "Overwatch_Champions_Series/2026/NA/Stage_3",
-  "generatedUtc": "2026-10-17T14:24:14.2624403Z",
+  "generatedUtc": "2026-10-18T04:07:50.6161955Z",
   "standings": [
     {
       "team": "Dallas Fuel",
@@ -29,57 +29,85 @@
       "winPct": 0.5
     },
     {
-      "team": "Disguised",
+      "team": "NTMR",
       "seriesWins": 1,
       "seriesLosses": 1,
       "mapWins": 3,
+      "mapLosses": 3,
+      "form": [
+        "W",
+        "L"
+      ],
+      "mapDiff": 0,
+      "winPct": 0.5
+    },
+    {
+      "team": "Team Liquid",
+      "seriesWins": 1,
+      "seriesLosses": 1,
+      "mapWins": 4,
       "mapLosses": 4,
       "form": [
-        "L",
-        "W"
+        "W",
+        "L"
       ],
-      "mapDiff": -1,
+      "mapDiff": 0,
       "winPct": 0.5
     },
     {
       "team": "The Kafe",
       "seriesWins": 1,
-      "seriesLosses": 1,
-      "mapWins": 4,
-      "mapLosses": 5,
+      "seriesLosses": 2,
+      "mapWins": 5,
+      "mapLosses": 8,
       "form": [
+        "L",
         "W",
         "L"
       ],
-      "mapDiff": -1,
-      "winPct": 0.5
-    },
-    {
-      "team": "Team Liquid",
-      "seriesWins": 0,
-      "seriesLosses": 1,
-      "mapWins": 1,
-      "mapLosses": 3,
-      "form": [
-        "L"
-      ],
-      "mapDiff": -2,
-      "winPct": 0
-    },
-    {
-      "team": "NTMR",
-      "seriesWins": 0,
-      "seriesLosses": 1,
-      "mapWins": 0,
-      "mapLosses": 3,
-      "form": [
-        "L"
-      ],
       "mapDiff": -3,
-      "winPct": 0
+      "winPct": 0.3333333333333333
+    },
+    {
+      "team": "Disguised",
+      "seriesWins": 1,
+      "seriesLosses": 2,
+      "mapWins": 3,
+      "mapLosses": 7,
+      "form": [
+        "L",
+        "L",
+        "W"
+      ],
+      "mapDiff": -4,
+      "winPct": 0.3333333333333333
     }
   ],
   "recent": [
+    {
+      "page": "Overwatch Champions Series/2026/NA/Stage 3/Regular Season",
+      "team1": "NTMR",
+      "team2": "Disguised",
+      "score1": 3,
+      "score2": 0,
+      "winner": 1,
+      "date": "2026-10-17T18:15:00",
+      "dateText": "2026-10-17 - 18:15",
+      "isFinished": true,
+      "winnerName": "NTMR"
+    },
+    {
+      "page": "Overwatch Champions Series/2026/NA/Stage 3/Regular Season",
+      "team1": "Team Liquid",
+      "team2": "The Kafe",
+      "score1": 3,
+      "score2": 1,
+      "winner": 1,
+      "date": "2026-10-17T16:40:00",
+      "dateText": "2026-10-17 - 16:40",
+      "isFinished": true,
+      "winnerName": "Team Liquid"
+    },
     {
       "page": "Overwatch Champions Series/2026/NA/Stage 3/Regular Season",
       "team1": "Spacestation Gaming",
@@ -142,30 +170,6 @@
     }
   ],
   "upcoming": [
-    {
-      "page": "Overwatch Champions Series/2026/NA/Stage 3/Regular Season",
-      "team1": "Team Liquid",
-      "team2": "The Kafe",
-      "score1": null,
-      "score2": null,
-      "winner": null,
-      "date": "2026-10-17T16:30:00",
-      "dateText": "2026-10-17 - 16:30",
-      "isFinished": false,
-      "winnerName": null
-    },
-    {
-      "page": "Overwatch Champions Series/2026/NA/Stage 3/Regular Season",
-      "team1": "NTMR",
-      "team2": "Disguised",
-      "score1": null,
-      "score2": null,
-      "winner": null,
-      "date": "2026-10-17T18:00:00",
-      "dateText": "2026-10-17 - 18:00",
-      "isFinished": false,
-      "winnerName": null
-    },
     {
       "page": "Overwatch Champions Series/2026/NA/Stage 3/Regular Season",
       "team1": "Dallas Fuel",
