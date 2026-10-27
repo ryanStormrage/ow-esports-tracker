@@ -1,6 +1,6 @@
 {
   "tournament": "Overwatch_Champions_Series/2026/NA/Stage_3",
-  "generatedUtc": "2026-10-26T04:16:26.0090217Z",
+  "generatedUtc": "2026-10-27T04:15:17.6073646Z",
   "standings": [
     {
       "team": "Dallas Fuel",
@@ -249,24 +249,24 @@
     {
       "page": "Overwatch Champions Series/2026/NA/Stage 3",
       "team1": "Team Liquid",
-      "team2": "TBD",
+      "team2": "The Kafe",
       "score1": null,
       "score2": null,
       "winner": null,
-      "date": null,
-      "dateText": null,
+      "date": "2026-10-30T15:00:00",
+      "dateText": "2026-10-30 - 15:00",
       "isFinished": false,
       "winnerName": null
     },
     {
       "page": "Overwatch Champions Series/2026/NA/Stage 3",
       "team1": "Dallas Fuel",
-      "team2": "TBD",
+      "team2": "Spacestation Gaming",
       "score1": null,
       "score2": null,
       "winner": null,
-      "date": null,
-      "dateText": null,
+      "date": "2026-10-30T16:30:00",
+      "dateText": "2026-10-30 - 16:30",
       "isFinished": false,
       "winnerName": null
     }
